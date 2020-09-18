@@ -45,7 +45,8 @@ defmodule Ft.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:fun_with_flags, "~> 1.5.1"}
+      {:fun_with_flags, "~> 1.5.1"},
+      {:fun_with_flags_ui, "~> 0.7.2"}
     ]
   end
 

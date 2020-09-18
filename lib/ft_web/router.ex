@@ -39,4 +39,14 @@ defmodule FtWeb.Router do
       live_dashboard "/dashboard", metrics: FtWeb.Telemetry
     end
   end
+
+  pipeline :mounted_apps do
+    plug :accepts, ["html"]
+    plug :put_secure_browser_headers
+  end
+
+  scope path: "/feature-flags" do
+    pipe_through :mounted_apps
+    forward "/", FunWithFlags.UI.Router, namespace: "feature-flags"
+  end
 end
