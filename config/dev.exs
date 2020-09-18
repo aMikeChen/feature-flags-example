@@ -9,6 +9,17 @@ config :ft, Ft.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+config :fun_with_flags, :cache,
+  enabled: true,
+  ttl: 900
+
+config :fun_with_flags, :persistence,
+  adapter: FunWithFlags.Store.Persistent.Ecto,
+  repo: Ft.Repo
+
+config :fun_with_flags, :cache_bust_notifications,
+  enabled: false
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
